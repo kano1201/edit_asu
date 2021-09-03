@@ -75,8 +75,8 @@ gem 'kaminari','~> 1.2.1'
 gem 'byebug'
 gem 'faker'
 
-gem 'dotenv-rails'
-group :production do
-  gem 'mysql2'
-end
+#gem 'dotenv-rails'
+#group :production do
+ # gem 'mysql2'
+#end
 gem 'listen', '>= 3.0.5', '< 3.2'
