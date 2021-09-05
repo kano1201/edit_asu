@@ -1,3 +1,3 @@
 $("#comment_<%= @photo.id %> .comments-count").html("<%= @photo.comments.count %>コメント");
-$(".comments").html("<%= j(render 'comments/index', photo: @photo) %>");
-$("#comment_comment").val("");
+$("#comments").html("<%= j(render 'comments/index', photo: @photo) %>");
+$(".comment-form").val("");
