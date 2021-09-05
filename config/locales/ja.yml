@@ -3,13 +3,13 @@ ja:
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
-        
+
     attributes:
       user:
         couple_name: Cpname
         name: Name1
         partner_name: Name2
-        email: メールアドレス
+        email: Email
         password: パスワード
         anniversary: 記念日
 
@@ -26,7 +26,7 @@ ja:
       - :year
       - :month
       - :day
-      
+
   views:
     pagination:
       previous: "« 前ページ"
