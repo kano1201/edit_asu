@@ -1,3 +1,4 @@
 $("#comment_<%= @photo.id %> .comments-count").html("<%= @photo.comments.count %>コメント");
 $(".comments").html("<%= j(render 'comments/index', photo: @photo) %>");
-$("#comment_comment").val("");
+$("#new_comment").val("");
+<!--コメントのjs直す-->

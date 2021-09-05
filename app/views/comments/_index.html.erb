@@ -1,18 +1,18 @@
-<div class="comment" data-turbolinks='false'>
+<div id="comments" data-turbolinks='false'>
   <% photo.comments.each do |comment| %>
     <p>
       <%= link_to user_path(comment.user),class: "user_#{comment.user.id}" do %>
         <%= attachment_image_tag comment.user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg", size: "50x50",class: "rounded-circle" %>
         <%= comment.user.couple_name %>
       <% end %>
-      
+
       <%= comment.created_at.strftime('%Y/%m/%d') %>
-      
+
       <% if current_user == comment.user %>
         <%= link_to '', photo_comment_path(comment.photo_id, comment.id), method: :delete, remote: true,class:"fas fa-trash" %>
     <% end %>
     </p>
     <p><%= comment.comment %></p>
-    
+
 </div>
 <% end %>
