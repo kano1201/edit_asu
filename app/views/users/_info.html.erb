@@ -8,10 +8,10 @@
       <th><%= user.partner_name %></th>
     </tr>
     <tr>
-      <th><%= user.anniversary %></th>
+      <th><p class="info-p">Anniv.</p><%= user.anniversary %></th>
     </tr>
     <tr>
-      <th><%= user.couple_name %></th>
+      <th><p class="info-p">Cp Name</p><%= user.couple_name %></th>
     </tr>
     <tr>
       <th>Follows</th>
@@ -32,6 +32,7 @@
       <% end %>
     <% else %>
       <div>
+        <%= link_to '', user_favorites_path(current_user.id),class: 'far fa-bookmark nav-link text-danger' %>
         <%= link_to '', edit_user_path(user),class: "fas fa-cog nav-link text-danger edit_user_#{user.id}" %>
         <%= link_to '', destroy_user_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-danger' %>
       </div>
