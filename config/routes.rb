@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
-  get 'search/search'
   devise_for :users
   root 'homes#about'
   get 'top' => 'homes#top'
-  get 'user/unsubscribe' => 'users#unsubscribe', as: 'confirm_unsubscribe'
-  patch 'user/withdraw' => 'users#withdraw', as: 'withdraw_user'
-  put 'user/withdraw' => 'users#withdraw'
   get '/search' => 'search#search'
 
   resources :users, only: [:show, :edit, :update, :index, :unsubscribe, :withdraw] do
+    collection do
+      get 'user/unsubscribe' => 'users#unsubscribe', as: 'confirm_unsubscribe'
+      patch 'user/withdraw' => 'users#withdraw', as: 'withdraw_user'
+      put 'user/withdraw' => 'users#withdraw'
+    end
     resource :relationships, only: [:create, :destroy]
     get 'followings' => 'relationships#followings', as: 'followings'
     get 'followers' => 'relationships#followers', as: 'followers'
