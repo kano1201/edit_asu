@@ -25,7 +25,7 @@
 
   <div class='info-btn text-right mr-2 mb-3'>
     <% if current_user != user %>
-      <span id="follow_btn_#{ user.id }"><%= render 'followbtn', user: user %></span>
+      <span id="follow_btn_#{ user.id }"><%= render 'relationships/followbtn', user: user %></span>
     <% else %>
       <div>
         <%= link_to '', user_favorites_path(current_user.id),class: 'far fa-bookmark nav-link text-danger' %>
