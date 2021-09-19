@@ -13,3 +13,5 @@ class SearchController < ApplicationController
   end
   
 end
+
+#バリデーション
