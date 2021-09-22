@@ -14,4 +14,4 @@ class SearchController < ApplicationController
   
 end
 
-#バリデーション検索
+#バリデーション検索 k聞く
