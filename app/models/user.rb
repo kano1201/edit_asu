@@ -14,6 +14,9 @@ class User < ApplicationRecord
   has_many :relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy #自分がフォローする側
   has_many :followers, through: :reverse_of_relationshios, source: :follower #自分をフォローしてるユーザー
   has_many :followings, through: :relationships, source: :followed #自分がフォローしてるユーザー
+  
+  has_many :user_rooms, dependent: :destroy
+  has_many :chats, dependent: :destroy
 
   validates :name, presence: true
   validates :partner_name, presence: true
