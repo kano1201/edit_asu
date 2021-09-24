@@ -28,7 +28,7 @@
       <span id="follow_btn_#{user.id}"><%= render 'relationships/followbtn', user: user %></span>
     <% else %>
       <div>
-        <!--%= link_to '', chat_path(chat.id),class: 'far fa-envelope nav-link text-danger' %-->
+        <%= link_to '', chat_path,class: 'far fa-envelope nav-link text-danger' %>
         <%= link_to '', user_favorites_path(current_user.id),class: 'far fa-bookmark nav-link text-danger' %>
         <%= link_to '', edit_user_path(user),class: "fas fa-cog nav-link text-danger edit_user_#{user.id}" %>
         <%= link_to '', destroy_user_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-danger' %>
