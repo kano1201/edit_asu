@@ -34,7 +34,9 @@
       <%= form_with model: @chat, remote: true do |f| %>
         <%= f.text_field :message %>
         <%= f.hidden_field :room_id %>
-        <%= f.submit "SEND", class:"btn btn-sm btn-success chat-btn" %>
+        <div class="form_btn offset-md-8 mt-5">
+          <%= f.submit 'Send',class:"btn btn-border" %>
+         </div>
       <% end %>
     </div>
   </div>
