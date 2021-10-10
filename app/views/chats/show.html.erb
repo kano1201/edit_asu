@@ -15,7 +15,7 @@
             <tbody>
               <tr>
                 <th>
-                  <!--p style="text-align: left;"><!%= current_user.profile_image %></p写真いれる!--> 
+                  <%= attachment_image_tag(current_user, :profile_image,:fill, 50, 50,fallback: "no_image.jpg", size: "50x50",class: "rounded-circle")%>
                   <p style="text-align: left;"><%= chat.message %></p>
                 </th>
                 <th></th>
@@ -24,7 +24,7 @@
               <tr>
                 <th></th>
                 <th>
-                  <!--p style="text-align: right;"><!%= @user.profile_image %></p-->
+                  <%= attachment_image_tag(@user, :profile_image,:fill, 50, 50,fallback: "no_image.jpg", size: "50x50",class: "rounded-circle")%>
                   <p style="text-align: right;"><%= chat.message %></p>
                 </th>
               </tr>
