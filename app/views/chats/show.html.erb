@@ -6,8 +6,8 @@
       <table class="message table">
         <thead>
           <tr>
-            <th style="text-align: left; font-size: 20px;"><%= current_user.couple_name %></th>
-            <th style="text-align: right; font-size: 20px;"><%= @user.couple_name %></th>
+            <th style="text-align: left; font-size: 20px;"><!--%= current_user.couple_name %--><%= @user.couple_name %></th>
+            <th style="text-align: right; font-size: 20px;"><!--%= @user.couple_name %--><%= current_user.couple_name %></th>
           </tr>
         </thead>
         <% @chats.each do |chat| %>
@@ -47,4 +47,4 @@
   </div>
 </div>
 
-<!--table変える！左右変える！-->
+<!--table変える！左右変える-->
