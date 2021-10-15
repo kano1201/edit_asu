@@ -3,35 +3,35 @@
     <div class='col-xs-6 mx-auto mb-5'>
       <h5>CHAT WITH <%= @user.couple_name %></h5>
 
-      <table class="message table">
+      <div class="message"><!--table class="message table">
         <thead>
-          <tr>
-            <th style="text-align: left; font-size: 20px;"><!--%= current_user.couple_name %--><%= @user.couple_name %></th>
-            <th style="text-align: right; font-size: 20px;"><!--%= @user.couple_name %--><%= current_user.couple_name %></th>
+          <tr-->
+            <div style="text-align: left; font-size: 20px;"><!--%= current_user.couple_name %--><%= @user.couple_name %></div><!--/th-->
+            <div style="text-align: right; font-size: 20px;"><!--%= @user.couple_name %--><%= current_user.couple_name %></div><!--/th>
           </tr>
-        </thead>
+        </thead-->
         <% @chats.each do |chat| %>
           <% if chat.user_id == current_user.id %>
-            <tbody>
+            <!--tbody>
               <tr>
-                <th>
+                <th-->
                   <%= attachment_image_tag(current_user, :profile_image,:fill, 50, 50,fallback: "no_image.jpg", size: "50x50",class: "rounded-circle")%>
                   <p style="text-align: left;"><%= chat.message %></p>
-                </th>
+                <!--/th>
                 <th></th>
-              </tr>
+              </tr-->
           <% else %>
-              <tr>
+              <!--tr>
                 <th></th>
-                <th>
+                <th-->
                   <%= attachment_image_tag(@user, :profile_image,:fill, 50, 50,fallback: "no_image.jpg", size: "50x50",class: "rounded-circle")%>
                   <p style="text-align: right;"><%= chat.message %></p>
-                </th>
+                <!--/th>
               </tr>
-            </tbody>
+            </tbody-->
           <% end %>
         <% end %>
-      </table>
+      </div><!--/table-->
 
       <%= form_with model: @chat, remote: true do |f| %>
         <%= f.text_field :message %>
