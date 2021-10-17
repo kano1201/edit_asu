@@ -5,14 +5,16 @@
 
       <div class="message">
         <div style="text-align: left; font-size: 20px;"><%= @user.couple_name %></div> <!--dmの相手の名前-->
-        <div style="text-align: right; font-size: 20px;"><%= current_user.couple_name %></div> <!--dm自分の名前
+        <div style="text-align: right; font-size: 20px;"><%= current_user.couple_name %></div> <!--dm自分の名前-->
         <% @chats.each do |chat| %>
           <% if chat.user_id == current_user.id %>
-                  <%= attachment_image_tag(current_user, :profile_image,:fill, 50, 50,fallback: "no_image.jpg", size: "50x50",class: "rounded-circle")%>
-                  <p style="text-align: left;"><%= chat.message %></p>
+            <div class="clearfix">
+            <%= attachment_image_tag(current_user, :profile_image,:fill, 50, 50,fallback: "no_image.jpg", size: "50x50",class: "rounded-circle float-right")%>
+            <p style="text-align: right;"><%= chat.message %></p>
+            </div>
           <% else %>
-                  <%= attachment_image_tag(@user, :profile_image,:fill, 50, 50,fallback: "no_image.jpg", size: "50x50",class: "rounded-circle")%>
-                  <p style="text-align: right;"><%= chat.message %></p>
+            <%= attachment_image_tag(@user, :profile_image,:fill, 50, 50,fallback: "no_image.jpg", size: "50x50",class: "rounded-circle")%>
+            <p style="text-align: left;"><%= chat.message %></p>
           <% end %>
         <% end %>
       </div>
