@@ -13,8 +13,10 @@
             <p style="text-align: right;"><%= chat.message %></p>
             </div>
           <% else %>
-            <%= attachment_image_tag(@user, :profile_image,:fill, 50, 50,fallback: "no_image.jpg", size: "50x50",class: "rounded-circle")%>
+            <div class="clearfix">
+            <%= attachment_image_tag(@user, :profile_image,:fill, 50, 50,fallback: "no_image.jpg", size: "50x50",class: "rounded-circle float-left")%>
             <p style="text-align: left;"><%= chat.message %></p>
+            </div>
           <% end %>
         <% end %>
       </div>
@@ -33,4 +35,4 @@
   </div>
 </div>
 
-<!--table変える！メッセージ左右変える！写真のjs書く-->
+<!--table変える！写真のjs書く-->
