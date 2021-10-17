@@ -3,35 +3,19 @@
     <div class='col-xs-6 mx-auto mb-5'>
       <h5>CHAT WITH <%= @user.couple_name %></h5>
 
-      <div class="message"><!--table class="message table">
-        <thead>
-          <tr-->
-            <div style="text-align: left; font-size: 20px;"><!--%= current_user.couple_name %--><%= @user.couple_name %></div><!--/th-->
-            <div style="text-align: right; font-size: 20px;"><!--%= @user.couple_name %--><%= current_user.couple_name %></div><!--/th>
-          </tr>
-        </thead-->
+      <div class="message"><
+            <div style="text-align: left; font-size: 20px;"><%= @user.couple_name %></div>
+            <div style="text-align: right; font-size: 20px;"><%= current_user.couple_name %></div>
         <% @chats.each do |chat| %>
           <% if chat.user_id == current_user.id %>
-            <!--tbody>
-              <tr>
-                <th-->
                   <%= attachment_image_tag(current_user, :profile_image,:fill, 50, 50,fallback: "no_image.jpg", size: "50x50",class: "rounded-circle")%>
                   <p style="text-align: left;"><%= chat.message %></p>
-                <!--/th>
-                <th></th>
-              </tr-->
           <% else %>
-              <!--tr>
-                <th></th>
-                <th-->
                   <%= attachment_image_tag(@user, :profile_image,:fill, 50, 50,fallback: "no_image.jpg", size: "50x50",class: "rounded-circle")%>
                   <p style="text-align: right;"><%= chat.message %></p>
-                <!--/th>
-              </tr>
-            </tbody-->
           <% end %>
         <% end %>
-      </div><!--/table-->
+      </div>
 
       <%= form_with model: @chat, remote: true do |f| %>
         <%= f.text_field :message %>
