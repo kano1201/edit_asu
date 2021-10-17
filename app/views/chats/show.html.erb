@@ -3,9 +3,9 @@
     <div class='col-xs-6 mx-auto mb-5'>
       <h5>CHAT WITH <%= @user.couple_name %></h5>
 
-      <div class="message"><
-            <div style="text-align: left; font-size: 20px;"><%= @user.couple_name %></div>
-            <div style="text-align: right; font-size: 20px;"><%= current_user.couple_name %></div>
+      <div class="message">
+        <div style="text-align: left; font-size: 20px;"><%= @user.couple_name %></div> <!--dmの相手の名前-->
+        <div style="text-align: right; font-size: 20px;"><%= current_user.couple_name %></div> <!--dm自分の名前
         <% @chats.each do |chat| %>
           <% if chat.user_id == current_user.id %>
                   <%= attachment_image_tag(current_user, :profile_image,:fill, 50, 50,fallback: "no_image.jpg", size: "50x50",class: "rounded-circle")%>
