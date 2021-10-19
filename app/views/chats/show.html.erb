@@ -9,7 +9,7 @@
         <% @chats.each do |chat| %>
           <% if chat.user_id == current_user.id %>
             <div class="clearfix">
-            <%= attachment_image_tag(current_user, :profile_image,:fill, 50, 50,fallback: "no_image.jpg", size: "50x50",class: "rounded-circle float-right")%>
+            <div class="chat-img"><%= attachment_image_tag(current_user, :profile_image,:fill, 50, 50,fallback: "no_image.jpg", size: "50x50",class: "rounded-circle float-right")%></div>
             <p style="text-align: right;"><%= chat.message %></p>
             </div>
           <% else %>
