@@ -12,6 +12,7 @@
                 <td>follow: <%= user.followings.count %></td>
                 <td>follower: <%= user.followers.count %></td>
                 <td><%= link_to 'Show', user_path(user), class: "user_#{user.id}" %></td>
+                <td><%= link_to '', chat_path(user.id),class: "far fa-envelope nav-link text-danger" %></td>
               </tr>
             <% end %>
         </tbody>
