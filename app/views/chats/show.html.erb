@@ -7,13 +7,13 @@
         <div style="text-align: left; font-size: 20px;"><%= @user.couple_name %></div> <!--dmの相手の名前-->
         <div style="text-align: right; font-size: 20px;"><%= current_user.couple_name %></div> <!--dm自分の名前-->
         <% @chats.each do |chat| %>
-          <% if chat.user_id == current_user.id %> <!--自分の送信チャット右-->
+          <% if chat.user_id == current_user.id %> <!--自分のチャット右-->
             <div class="clearfix">
             <div class="chat-img"><%= attachment_image_tag(current_user, :profile_image,:fill, 50, 50,fallback: "no_image.jpg", size: "50x50",class: "rounded-circle float-right")%></div>
             <p style="text-align: right;"><%= chat.message %></p>
             </div>
           <% else %>
-            <div class="clearfix"> <!--相手の送信チャット左-->
+            <div class="clearfix"> <!--相手のチャット左-->
             <%= attachment_image_tag(@user, :profile_image,:fill, 50, 50,fallback: "no_image.jpg", size: "50x50",class: "rounded-circle float-left")%>
             <p style="text-align: left;"><%= chat.message %></p>
             </div>
